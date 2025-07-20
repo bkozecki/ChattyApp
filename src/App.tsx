@@ -1,4 +1,4 @@
-import { Root } from "./components/UI/Root";
+import { Root } from "./components/Root";
 
 function App() {
   return <Root />;

@@ -1,3 +1,10 @@
+import styled from "styled-components";
+
 export const Detail = () => {
-  return <div>Detail</div>;
+  return <DetailComponent>Detail</DetailComponent>;
 };
+
+const DetailComponent = styled.div`
+  flex: 1;
+  height: 100%;
+`;
