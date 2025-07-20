@@ -1,12 +1,18 @@
-import { IoMoonSharp } from "react-icons/io5";
 import { FaSun } from "react-icons/fa6";
-
+import { IoMoonSharp } from "react-icons/io5";
 import styled from "styled-components";
+
 import { Margin } from "../UI/Margin/Margin";
 
 type ThemeControlProps = {
   isDarkmode: boolean;
   setIsDarkmode: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+type IconProps = {
+  active: boolean;
+  activeColor: string;
+  inactiveColor: string;
 };
 
 export const ThemeControl = ({
@@ -15,12 +21,21 @@ export const ThemeControl = ({
 }: ThemeControlProps) => {
   return (
     <ThemeControlWrapper>
-      <StyledSunIcon
+      <StyledIcon
         onClick={() => setIsDarkmode(false)}
+        as={FaSun}
         active={!isDarkmode}
+        activeColor="#ffe72e"
+        inactiveColor="#00000076"
       />
       <Margin $right="0.8rem" />
-      <StyledMoonIcon onClick={() => setIsDarkmode(true)} active={isDarkmode} />
+      <StyledIcon
+        onClick={() => setIsDarkmode(true)}
+        as={IoMoonSharp}
+        active={isDarkmode}
+        activeColor="#6f74bd"
+        inactiveColor="#d1d1d1"
+      />
     </ThemeControlWrapper>
   );
 };
@@ -33,13 +48,9 @@ const ThemeControlWrapper = styled.div`
   justify-content: end;
 `;
 
-const StyledSunIcon = styled(FaSun)<{ active: boolean }>`
+const StyledIcon = styled.span<IconProps>`
   cursor: pointer;
-  color: ${({ active }) => (active ? "#ffe72e" : "#00000076")};
-  font-size: 1.2rem;
-`;
-const StyledMoonIcon = styled(IoMoonSharp)<{ active: boolean }>`
-  cursor: pointer;
-  color: ${({ active }) => (active ? "#6f74bd" : "#d1d1d1")};
+  color: ${({ active, activeColor, inactiveColor }) =>
+    active ? activeColor : inactiveColor};
   font-size: 1.2rem;
 `;
