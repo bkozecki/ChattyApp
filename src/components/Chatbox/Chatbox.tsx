@@ -25,7 +25,6 @@ const ChatboxComponent = styled.div<{ darkmode: boolean }>`
   height: 90%;
   width: 90%;
   border-radius: 5px;
-  padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;

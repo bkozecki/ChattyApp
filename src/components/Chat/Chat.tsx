@@ -7,4 +7,5 @@ export const Chat = () => {
 const ChatComponent = styled.div`
   flex: 2;
   height: 100%;
+  padding: 1rem 0.5rem;
 `;
