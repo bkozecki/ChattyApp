@@ -18,9 +18,9 @@ export const UserInfo = () => {
         $align="center"
         $justify="space-between"
       >
-        <IoIosMore style={{ cursor: "pointer" }} />
-        <IoIosVideocam style={{ cursor: "pointer" }} />
-        <MdEdit style={{ cursor: "pointer" }} />
+        <IoIosMore />
+        <IoIosVideocam />
+        <MdEdit />
       </Flex>
     </UserInfoWrapper>
   );
@@ -31,6 +31,12 @@ const UserInfoWrapper = styled.div`
   align-items: center;
   flex-direction: row;
   gap: 1rem;
+  padding: 0 1rem;
+
+  svg {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
 `;
 
 const UserData = styled.div`

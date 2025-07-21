@@ -18,7 +18,6 @@ export const Root = () => {
 const Container = styled.div<{ darkmode: boolean }>`
   height: 100%;
   width: 100%;
-  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
